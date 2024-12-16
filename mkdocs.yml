@@ -1,2 +1,3 @@
 site_name: 太阳的恩情
-theme: readthedocs
+theme:
+  name: material
