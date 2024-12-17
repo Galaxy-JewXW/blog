@@ -1,0 +1,2093 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../%E7%BC%96%E8%AF%91%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93%E6%84%9F%E6%83%B3/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>编译实验优化文档 - Jew的文档杂项</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Jew的文档杂项" class="md-header__button md-logo" aria-label="Jew的文档杂项" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jew的文档杂项
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              编译实验优化文档
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jew的文档杂项" class="md-nav__button md-logo" aria-label="Jew的文档杂项" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Jew的文档杂项
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jew的文档杂项
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    编译
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            编译
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    编译实验优化文档
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    编译实验优化文档
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      中端优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="中端优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssa" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSA：静态单赋值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除不可达基本块
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mem2reg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mem2Reg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数副作用分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数内联
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局变量本地化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="全局变量本地化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局常变量优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局常数组优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码删除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gvn" class="md-nav__link">
+    <span class="md-ellipsis">
+      GVN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量折叠
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      跳转优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局变量访存优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本块合并与基本块重排
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      输出优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      后端优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="后端优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phi" class="md-nav__link">
+    <span class="md-ellipsis">
+      消除phi结点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      寄存器分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算强度削弱
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      窥孔优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BC%96%E8%AF%91%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93%E6%84%9F%E6%83%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编译实验总结感想
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BC%96%E8%AF%91%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    编译实验设计文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      中端优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="中端优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssa" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSA：静态单赋值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除不可达基本块
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mem2reg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mem2Reg
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数副作用分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数内联
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局变量本地化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="全局变量本地化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局常变量优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局常数组优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码删除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gvn" class="md-nav__link">
+    <span class="md-ellipsis">
+      GVN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量折叠
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      跳转优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局变量访存优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本块合并与基本块重排
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      输出优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      后端优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="后端优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phi" class="md-nav__link">
+    <span class="md-ellipsis">
+      消除phi结点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      寄存器分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算强度削弱
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      窥孔优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">编译实验优化文档</h1>
+<p>代码优化可分为机器无关的中端优化与机器相关的后端优化。以下介绍我的编译器<code>PlatoCompiler</code>实现的优化方法。</p>
+<h2 id="_2">中端优化</h2>
+<h3 id="ssa">SSA：静态单赋值</h3>
+<p>在处理栈或局部变量时，编译器前端通过 alloca 指令将每个局部变量映射到栈上一个对应的空间，将读写映射为对应空间的 load/store 指令。例如以下的指令：</p>
+<pre><code class="language-c">int main() {
+    int x, cond;
+    cond = getint();
+    if (cond &gt; 0){
+        x = 1;
+    }
+    else{
+        x = -1;
+    }
+    printf(&quot;%d&quot;, x);
+    return 0;
+}
+</code></pre>
+<p>翻译出来的LLVM IR是：</p>
+<pre><code>define dso_local i32 @main() {
+b0:
+    %v1 = alloca i32
+    %v2 = alloca i32
+    %v3 = call i32 @getint()
+    store i32 %v3, i32* %v2
+    %v4 = load i32, i32* %v2
+    %v5 = icmp sgt i32 %v4, 0
+    br i1 %v5, label %b6, label %b7
+b6:
+    store i32 1, i32* %v1
+    br label %b9
+b7:
+    %v8 = sub i32 0, 1
+    store i32 %v8, i32* %v1
+    br label %b9
+b9:
+    %v10 = load i32, i32* %v1
+    call void @putint(i32 %v10)
+    ret i32 0
+}
+</code></pre>
+<p>这种方案简化了前端设计，但是在中间代码上需要进行相关优化时，大量的alloca/load/store指令导致编译器需要跟踪记录变量在栈空间上的位置，这种非SSA形式使得分析def-use关系会变得更加复杂，因此需要消除这些不必要的内存操作。</p>
+<p>上述代码的SSA形式为：</p>
+<pre><code>define dso_local i32 @main() {
+b0:
+    %v1 = call i32 @getint()
+    %v2 = icmp sgt i32 %v1, 0
+    br i1 %v2, label %b3, label %b6
+b3:
+    br label %b4
+b4:
+    %v5 = phi i32 [ 1, %b3 ], [ -1, %b6 ]
+    call void @putint(i32 %v5)
+    ret i32 0
+b6:
+    br label %b4
+}
+</code></pre>
+<p>为了将非SSA的IR转换为SSA形式，可以采用Mem2Reg的方法。Mem2Reg的核心在于</p>
+<ul>
+<li>在支配边界（恰好支配不到的基本块）插入phi指令</li>
+<li>插入phi后进行重命名</li>
+</ul>
+<p>为了得到支配边界，我们首先需要构建函数的CFG；构建CFG之前，首先要做的是删除不可达基本块。</p>
+<h3 id="_3">删除不可达基本块</h3>
+<p>在IR中可能出现以下的语句：</p>
+<pre><code>b10:
+    br label %b8
+    br label %b14
+</code></pre>
+<p>此时<code>br label %14</code>是不可达的语句，需要将终结语句<code>br label %b8</code>之后的代码删除</p>
+<p>完成该步骤之后，对每个函数，从第一个基本块开始，根据每个基本块的最后一条语句（一定是终结语句）进行dfs，搜索可能到达的基本块，并删除其他的基本块。</p>
+<pre><code class="language-java">private static void simplifyFunction(Function func) {
+    func.getBasicBlocks().forEach(SurplusBlock::deleteDeadInstr);
+    visited = new HashSet&lt;&gt;();
+    dfs(func.getEntryBlock());
+    func.getBasicBlocks().removeIf(block -&gt; {
+        if (!visited.contains(block)) {
+            block.getInstructions().forEach(Instruction::removeOperands);
+            block.removeOperands();
+            block.setDeleted(true);
+            return true;
+        }
+        return false;
+    });
+}
+
+private static void dfs(BasicBlock block) {
+    if (!visited.add(block)) {
+        return;
+    }
+    Instruction lastInstruction = block.getLastInstruction();
+    if (lastInstruction instanceof BrInst brInst) {
+        if (brInst.isConditional()) {
+            dfs(brInst.getTrueBlock());
+            dfs(brInst.getFalseBlock());
+        } else {
+            dfs(brInst.getTrueBlock());
+        }
+    }
+}
+</code></pre>
+<h3 id="mem2reg">Mem2Reg</h3>
+<p>教程中介绍了对于每个变量v，通过求出$DF^+(Def_v)$就知道了插入phi函数的位置。为了求出DF（支配边界），对于每个函数<code>Function</code>，我们采用以下步骤进行计算：</p>
+<ol>
+<li>计算CFG图</li>
+</ol>
+<p>每个基本块都以一个终结语句结尾，与删除不可达基本块类似，通过每一个基本块的终结语句计算该基本块的前驱基本块和后继基本块。</p>
+<p>```java
+   private static void calcControlFlowGraph() {
+       for (BasicBlock block : currentFunction.getBasicBlocks()) {
+           Instruction lastInstruction = block.getLastInstruction();
+           if (lastInstruction instanceof BrInst brInst) {
+               if (brInst.isConditional()) {
+                   addEdge(block, brInst.getTrueBlock());
+                   addEdge(block, brInst.getFalseBlock());
+               } else {
+                   addEdge(block, brInst.getTrueBlock());
+               }
+           }
+       }
+       for (BasicBlock block : currentFunction.getBasicBlocks()) {
+           block.setNextBlocks(childBlocks.get(block));
+           block.setPrevBlocks(parentBlocks.get(block));
+       }
+   }</p>
+<p>private static void addEdge(BasicBlock from, BasicBlock to) {
+       childBlocks.get(from).add(to);
+       parentBlocks.get(to).add(from);
+   }
+   ```</p>
+<ol>
+<li>
+<p>计算支配树</p>
+</li>
+<li>
+<p>利用定义计算支配关系：在dfs中，如果在遍历时遇到<code>dominator</code>自己，就不再继续递归下去。这相当于在控制流图中“屏蔽”了<code>dominator</code>，测试在没有穿过该块的前提下，能到达哪些块。如果不能访问到基本块<code>block</code>，那么<code>dominator</code>就是<code>block</code>的支配块。</p>
+</li>
+<li>计算直接支配：如果在<code>dominated</code>被支配的所有块中，有另外一个块<code>otherDominator</code>同时被<code>dominator</code>支配，则<code>dominator</code>可能并不是距离<code>dominated</code>最近的支配者，因为<code>otherDominator</code>夹在中间。A支配C且A支配B，C支配B时，则A不是B的直接支配，而C才是。</li>
+</ol>
+<p>```java
+   private static void calcDominatorTree() {
+       BasicBlock entry = currentFunction.getBasicBlocks().get(0);
+       for (BasicBlock dominator : currentFunction.getBasicBlocks()) {
+           Set<BasicBlock> reachableBlocks = new HashSet&lt;&gt;();
+           dfs(entry, dominator, reachableBlocks);
+           for (BasicBlock block : currentFunction.getBasicBlocks()) {
+               if (!reachableBlocks.contains(block)) {
+                   dominates.get(dominator).add(block);
+                   dominatedBy.get(block).add(dominator);
+               }
+           }
+           dominator.setDominateBlocks(dominates.get(dominator));
+       }
+       for (BasicBlock dominated : currentFunction.getBasicBlocks()) {
+           for (BasicBlock dominator : dominatedBy.get(dominated)) {
+               if (isImmediateDominator(dominator, dominated)) {
+                   dominated.setImmediateDominator(dominator);
+                   immediatelyDominates.get(dominator).add(dominated);
+                   break;
+               }
+           }
+       }
+       for (BasicBlock block : currentFunction.getBasicBlocks()) {
+           block.setImmediateDominateBlocks(immediatelyDominates.get(block));
+       }
+   }</p>
+<p>private static void dfs(BasicBlock current, BasicBlock dominator, Set<BasicBlock> reachableBlocks) {
+       reachableBlocks.add(current);
+       if (current.equals(dominator)) {
+           return;
+       }
+       for (BasicBlock child : current.getNextBlocks()) {
+           if (!reachableBlocks.contains(child)) {
+               dfs(child, dominator, reachableBlocks);
+           }
+       }
+   }</p>
+<p>private static boolean isImmediateDominator(BasicBlock dominator, BasicBlock dominated) {
+       for (BasicBlock otherDominator : dominatedBy.get(dominated)) {
+           if (otherDominator != dominator
+                   &amp;&amp; dominates.get(dominator).contains(otherDominator)) {
+               return false;
+           }
+       }
+       return true;
+   }
+   ```</p>
+<blockquote>
+<p>以上算法的时间复杂度较高，可考虑Lengauer-Tarjan算法来优化效率</p>
+</blockquote>
+<ol>
+<li>计算支配边界</li>
+</ol>
+<p>对于每一个被<code>dominator</code>支配的块<code>dominated</code>，查看它的直接后继块<code>child</code>。如果这个<code>child</code>不在<code>dominator</code>支配的集合中，说明该<code>child</code>位于<code>dominator</code>所支配区域之外。由于<code>child</code>直接跟<code>dominated</code>相连，而<code>dominated</code>受<code>dominator</code>支配，但是<code>child</code>不受<code>dominator</code>支配，那么<code>child</code>就是支配边界中的一员（形成了支配区域与非支配区域之间的边界）。</p>
+<p>如果<code>dominator</code>的直接后继也不受<code>dominator</code>支配，那么该后继块也可视为支配边界的一部分。</p>
+<p><code>java
+   private static void calcDominanceFrontier() {
+       for (BasicBlock dominator : currentFunction.getBasicBlocks()) {
+           ArrayList&lt;BasicBlock&gt; frontier = new ArrayList&lt;&gt;();
+           for (BasicBlock dominated : dominator.getDominateBlocks()) {
+               for (BasicBlock child : dominated.getNextBlocks()) {
+                   if (!dominator.getDominateBlocks().contains(child)
+                           &amp;&amp; !frontier.contains(child)) {
+                       frontier.add(child);
+                   }
+               }
+           }
+           for (BasicBlock child : dominator.getNextBlocks()) {
+               if (!dominator.getDominateBlocks().contains(child)
+                       &amp;&amp; !frontier.contains(child)) {
+                   frontier.add(child);
+               }
+           }
+           dominator.setDominanceFrontier(frontier);
+       }
+   }</code></p>
+<ol>
+<li>计算def集合和use集合</li>
+</ol>
+<p>对于<code>Function</code>中的每一个alloca指令（不考虑数组），通过<code>User-Use-Value</code>关系，对其所有的使用者进行分类。<code>useInstructions</code>存放所有对该变量的读取（<code>load</code>）指令。<code>defInstructions</code>存放所有对该变量的定义（<code>store</code>）指令。<code>defBlocks</code>记录所有存在该变量定义（<code>store</code>）的基本块。</p>
+<ol>
+<li>插入phi</li>
+</ol>
+<p>按照伪代码进行操作即可。</p>
+<p><img alt="1.png" src="https://drinkwater-1325041233.cos.ap-guangzhou.myqcloud.com/imgs/wvPf9pKkCDtAZy3.png" /></p>
+<p>一种可能的实现如下：</p>
+<p><code>java
+   private static void insertPhi() {
+       HashSet&lt;BasicBlock&gt; F = new HashSet&lt;&gt;();
+       ArrayList&lt;BasicBlock&gt; W = new ArrayList&lt;&gt;(defBlocks);
+       while (!W.isEmpty()) {
+           BasicBlock X = W.remove(0);
+           for (BasicBlock Y : X.getDominanceFrontier()) {
+               if (!F.contains(Y)) {
+                   PhiInst phiInst = new PhiInst(currentAlloc.getTargetType(),
+                           Y, new ArrayList&lt;&gt;(Y.getPrevBlocks()));
+                   Y.getInstructions().add(0, phiInst);
+                   useInstructions.add(phiInst);
+                   defInstructions.add(phiInst);
+                   F.add(Y);
+                   if (!defBlocks.contains(Y)) {
+                       W.add(Y);
+                   }
+               }
+           }
+       }
+   }</code></p>
+<ol>
+<li>变量重命名</li>
+</ol>
+<p>参考教程提供的伪代码，通过遍历支配树来进行，给每个单独的存活区间一个新的变量名。</p>
+<ul>
+<li>当遇到store时，将store的值压入栈（defStack），表示变量在此处有了一个新版本</li>
+<li>当遇到load时，用栈顶的值替换load指令（即用当前最新版本的变量值），从而消除对内存的读取</li>
+<li>当遇到phi时，也将phi节点作为新定义压入栈中，以便后续使用</li>
+<li>对所有后继基本块的phi指令设置来自当前块的值，如果defStack为空，设置为Undefined。这种情况为UB，在我的编译器中是设为0。</li>
+<li>当离开该基本块时，将在该块中所推入的定义值从栈中弹出，以保持栈的正确性</li>
+<li>删除已被处理的alloca/load/store指令</li>
+</ul>
+<p><code>java
+   private static void renameVariables(BasicBlock block) {
+       Iterator&lt;Instruction&gt; it = block.getInstructions().iterator();
+       int pushCount = 0;
+       while (it.hasNext()) {
+           Instruction instruction = it.next();
+           if (instruction.equals(currentAlloc)) {
+               it.remove();
+           } else if (instruction instanceof LoadInst
+                   &amp;&amp; useInstructions.contains(instruction)) {
+               Value newValue = defStack.empty() ? new Undefined() : defStack.peek();
+               instruction.replaceByNewValue(newValue);
+               it.remove();
+           } else if (instruction instanceof StoreInst storeInst
+                   &amp;&amp; defInstructions.contains(instruction)) {
+               defStack.push(storeInst.getStoredValue());
+               instruction.removeOperands();
+               pushCount++;
+               it.remove();
+           } else if (instruction instanceof PhiInst
+                   &amp;&amp; defInstructions.contains(instruction)) {
+               pushCount++;
+               defStack.push(instruction);
+           }
+       }
+       for (BasicBlock child : block.getNextBlocks()) {
+           Instruction firstInstruction = child.getFirstInstruction();
+           if (firstInstruction instanceof PhiInst phiInst &amp;&amp; useInstructions.contains(firstInstruction)) {
+               Value value = defStack.empty() ? new Undefined() : defStack.peek();
+               phiInst.addValue(block, value);
+           }
+       }
+       for (BasicBlock dominated : block.getImmediateDominateBlocks()) {
+           renameVariables(dominated);
+       }
+       for (int i = 0; i &lt; pushCount; i++) {
+           defStack.pop();
+       }
+   }</code></p>
+<h3 id="_4">函数副作用分析</h3>
+<p>对所有函数进行分析，没有副作用的函数（pure function）可以进行更多的优化。</p>
+<p>判断一个函数有副作用的判定标准为：</p>
+<ol>
+<li>存在IO相关指令：IO会对外部状态产生影响</li>
+<li>写全局变量：改变Module的全局状态</li>
+<li>写通过<code>FuncParam</code>或<code>GlobalVar</code>间接引用的内存：通过参数或全局引用（如数组指针）对外部可见状态进行了修改</li>
+<li>调用有副作用的函数</li>
+</ol>
+<p>在代码实现上，第一遍扫描后，可能有一些函数调用了有副作用的函数，但是自身状态没有更新，此时需要对函数的调用关系进行传递。</p>
+<h3 id="_5">函数内联</h3>
+<p>函数内联通过被调用的函数体直接“复制”到调用处，从而消除函数调用的开销，同时为后续优化创造机会。</p>
+<ol>
+<li>构建调用图</li>
+</ol>
+<p>```java
+   private static void initializeCallGraphs() {
+       callGraph = new HashMap&lt;&gt;();
+       reverseCallGraph = new HashMap&lt;&gt;();</p>
+<pre><code>   module.getFunctions().forEach(func -&gt; {
+       callGraph.put(func, new HashSet&lt;&gt;());
+       reverseCallGraph.put(func, new HashSet&lt;&gt;());
+   });
+
+   module.getFunctions().forEach(func -&gt;
+           func.getBasicBlocks().stream()
+                   .flatMap(block -&gt; block.getInstructions().stream())
+                   .filter(instr -&gt; instr instanceof CallInst)
+                   .map(instr -&gt; (CallInst) instr)
+                   .forEach(callInst -&gt; {
+                       Function target = callInst.getCalledFunction();
+                       callGraph.get(func).add(target);
+                       reverseCallGraph.get(target).add(func);
+                   })
+   );
+</code></pre>
+<p>}
+   ```</p>
+<ol>
+<li>
+<p>判断是否需要内联，需要满足</p>
+</li>
+<li>
+<p>不是main函数</p>
+</li>
+<li>函数被调用，且函数不调用其他函数（叶子函数）</li>
+<li>不存在递归</li>
+</ol>
+<p>如果上述条件都满足，则找出所有对该function的调用点。</p>
+<p><code>java
+   ArrayList&lt;CallInst&gt; calls = reverseCallGraph.get(function).stream()
+               .flatMap(caller -&gt; caller.getBasicBlocks().stream())
+               .flatMap(block -&gt; block.getInstructions().stream())
+               .filter(instr -&gt; instr instanceof CallInst)
+               .map(instr -&gt; (CallInst) instr)
+               .filter(callInst -&gt; callInst.getOperands().get(0).getName().equals(function.getName()))
+               .collect(Collectors.toCollection(ArrayList::new));</code></p>
+<ol>
+<li>分裂基本块：在调用指令所在的基本块之后新建一个基本块nextBlock，将call指令之后的指令移动到nextBlock，并删除call指令。这样做的原因是为了方便在插入被调函数的代码后，可以无缝衔接原来的控制流。</li>
+</ol>
+<p>分裂基本块后需要更新phi指令的前趋基本块信息。</p>
+<ol>
+<li>
+<p>对被调用的函数代码进行深拷贝得到<code>copiedFunction</code>，将被调用函数的形式参数用调用指令的实参替换，在原来call指令的位置插入无条件跳转指令，跳转至<code>copiedFunction</code>的入口基本块，将<code>copiedFunction</code>的基本块插入。</p>
+</li>
+<li>
+<p>处理<code>copiedFunction</code>的<code>RetInst</code>：</p>
+</li>
+<li>
+<p>如果返回类型是<code>void</code>，将返回点转化为无条件跳转到nextBlock；</p>
+</li>
+<li>
+<p>如果有非void返回值，在nextBlock开头插入phi结点，用原本<code>RetInst</code>的返回值作为phi的操作数。</p>
+</li>
+<li>
+<p>每次会根据当前的调用图重新判断是否有新的函数可以内联。一旦有函数被内联修改了模块，则可能解开更多内联机会。</p>
+</li>
+</ol>
+<p>再次循环，直到没有更多可内联的函数。</p>
+<h3 id="_6">全局变量本地化</h3>
+<p>全局变量本地化的目的是将全局变量转换为更局部的形式（如函数内的局部变量），优化对全局变量的存取操作，同时暴露更多的优化机会。</p>
+<ol>
+<li>检查全局变量的使用情况</li>
+</ol>
+<p>在<code>PlatoCompiler</code>中，一个<code>Module</code>由多个<code>Function</code>和多个<code>GlobalVar</code>组成。对于每个<code>GlobalVar</code>，检查其在哪些函数中被使用。</p>
+<p><code>java
+   private static void checkUse(Module module) {
+       for (GlobalVar gv : module.getGlobalVars()) {
+           for (User user : gv.getUserList()) {
+               Function func = ((Instruction) user)
+                       .getBasicBlock().getFunction();
+               usedMap.computeIfAbsent(gv, k -&gt; new HashSet&lt;&gt;()).add(func);
+           }
+       }
+   }</code></p>
+<ol>
+<li>
+<p>构建函数调用图</p>
+</li>
+<li>
+<p>采取保守的策略，将满足以下条件的全局变量进行本地化处理：</p>
+</li>
+<li>
+<p>类型为<code>i8</code>或<code>i32</code></p>
+</li>
+<li>只在某一个函数<code>func</code>中被使用，且<code>func</code>没有被其他函数调用</li>
+</ol>
+<p>本地化的操作步骤为：</p>
+<ol>
+<li>
+<p>根据全局变量类型创建alloca语句，插入入口基本块</p>
+<p><code>java
+  BasicBlock entryBlock = func.getEntryBlock();
+  ValueType gvType = ((PointerType) gv.getValueType()).getTargetType();
+  AllocInst allocInst = new AllocInst(gvType);
+  allocInst.setBasicBlock(entryBlock);
+  entryBlock.getInstructions().add(0, allocInst);</code></p>
+</li>
+<li>
+<p>插入store语句，根据初始值设置新变量的初始值，缺省为0</p>
+<p><code>java
+  int initValue;
+  VarSymbol varSymbol = (VarSymbol) TableManager.getInstance1()
+          .getSymbol(gv.getName().substring(1));
+  InitialValue initialValue = varSymbol.getInitialValue();
+  if (initialValue.getElements() == null) {
+      initValue = 0;
+  } else {
+      initValue = varSymbol.getConstValue();
+  }
+  StoreInst storeInst = new StoreInst(allocInst, new ConstInt(gvType, initValue));
+  storeInst.setBasicBlock(entryBlock);
+  entryBlock.getInstructions().add(1, storeInst);</code></p>
+</li>
+<li>
+<p>将对全局变量的所有使用替换为新分配的局部变量，移除该全局变量</p>
+<p><code>java
+  gv.replaceByNewValue(allocInst);
+  toRemove.add(gv);</code></p>
+</li>
+</ol>
+<p>以上对一般的全局变量本地化替换策略较为保守，是因为在某些情况下，过于激进的优化会导致全局变量在其他函数中的使用仍然存在，使得部分函数依赖于该全局变量而另一些函数则不再使用，从而导致程序的语义发生改变。但是假设该全局变量满足一些特殊条件，那么可以采取另外的优化方法</p>
+<h4 id="_7">全局常变量优化</h4>
+<p>对于定义在全局的常变量<code>const int a = 4</code>，其值不会再发生改变，于是可将所有使用到全局常变量的load指令替换为一个常数，例如所有的<code>%v2 = load i32, i32* @a</code>，我们可以直接得到<code>%v2</code>的值是4。</p>
+<pre><code class="language-java">// gv的valuetype默认是指针类型
+ValueType gvType = ((PointerType) gv.getValueType()).getTargetType();
+if (gvType.equals(IntegerType.i8) || gvType.equals(IntegerType.i32)) {
+    int initValue;
+    InitialValue initialValue = varSymbol.getInitialValue();
+    if (initialValue.getElements() == null) {
+        initValue = 0;
+    } else {
+        initValue = varSymbol.getConstValue();
+    }
+    ConstInt constInt = new ConstInt(gvType, initValue);
+    for (User user : gv.getUserList()) {
+        if (user instanceof LoadInst loadInst) {
+            loadInst.replaceByNewValue(constInt);
+            toRemove.add(gv);
+            loadInst.getBasicBlock().getInstructions().remove(loadInst);
+        }
+    }
+}
+</code></pre>
+<h4 id="_8">全局常数组优化</h4>
+<p>对常数组<code>const int a[3] = {1, 2, 3}</code>，与常变量类似，可以将常数下标数组访问替换为具体值，如<code>int b = a[2]</code>可以直接替换为<code>int b = 3</code>。</p>
+<p>需要注意考虑下标非常数的情况，比如<code>int c = a[b]</code>。</p>
+<pre><code class="language-java">ValueType gvType = ((PointerType) gv.getValueType()).getTargetType();
+if (!(gvType instanceof ArrayType arrayType)) {
+    continue;
+}
+gvType = arrayType.getElementType();
+if (gvType.equals(IntegerType.i8) || gvType.equals(IntegerType.i32)) {
+    for (User user : gv.getUserList()) {
+        if (user instanceof GepInst gepInst) {
+            if (gepInst.getIndex() instanceof ConstInt constInt) {
+                int index = constInt.getIntValue();
+                for (User user1 : gepInst.getUserList()) {
+                    if (user1 instanceof LoadInst loadInst) {
+                        int intValue;
+                        if (index &lt; varSymbol.getInitialValue().getElements().size()) {
+                            intValue = varSymbol.getConstValue(index);
+                        } else {
+                            intValue = 0;
+                        }
+                        ConstInt constInt1 = new ConstInt(gvType, intValue);
+                        loadInst.replaceByNewValue(constInt1);
+                        loadInst.getBasicBlock().getInstructions().remove(loadInst);
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<p>以上对于全局常数组的优化同样适用于局部常数组，方法类似，在此不再赘述。</p>
+<h3 id="_9">代码删除</h3>
+<p>代码删除通过遍历有用函数中的每条指令，并沿着def-use链构建有用指令的<strong>闭包</strong>，删除不在闭包的指令。</p>
+<pre><code class="language-java">private static void delete(Function function) {
+    HashSet&lt;Instruction&gt; usefulInstructions = findUseful(function);
+    removeUseless(function, usefulInstructions);
+}
+
+// 查找有用的指令
+private static HashSet&lt;Instruction&gt; findUseful(Function function) {
+    HashSet&lt;Instruction&gt; useful = new HashSet&lt;&gt;();
+    function.getBasicBlocks().forEach(block -&gt;
+            block.getInstructions().stream()
+                    .filter(CodeRemoval::isUseful)
+                    .forEach(instruction -&gt; getClosure(instruction, useful))
+    );
+    return useful;
+}
+
+// 获取所有依赖关系的闭包
+private static void getClosure(Instruction instruction, HashSet&lt;Instruction&gt; useful) {
+    Stack&lt;Instruction&gt; stack = new Stack&lt;&gt;();
+    stack.push(instruction);
+    while (!stack.isEmpty()) {
+        Instruction curInstruction = stack.pop();
+        if (useful.add(curInstruction)) {
+            curInstruction.getOperands().stream()
+                    .filter(operand -&gt; operand instanceof Instruction)
+                    .map(operand -&gt; (Instruction) operand)
+                    .forEach(stack::push);
+        }
+    }
+}
+
+private static boolean isUseful(Instruction instruction) {
+    // 判断指令是否有用
+}
+
+// 移除无用的指令
+private static void removeUseless(Function function, HashSet&lt;Instruction&gt; useful) {
+    function.getBasicBlocks().forEach(block -&gt;
+            block.getInstructions().removeIf(instruction -&gt; {
+                if (!useful.contains(instruction)) {
+                    instruction.removeOperands();
+                    return true;
+                }
+                return false;
+            })
+    );
+}
+</code></pre>
+<p>除此之外，该阶段还可以完成<strong>无用函数删除、无用数组删除</strong>等工作。</p>
+<h3 id="gvn">GVN</h3>
+<p>GVN通过为每个唯一的计算分配一个值编号，确保相同计算只执行一次，并重用其结果。这样的“值编号”分配可以使用指令的哈希值进行。</p>
+<ol>
+<li>对每条指令生成唯一的哈希值：在LLVM IR中，可对计算语句、指针计算语句、函数调用语句、截断与扩展语句进行处理。</li>
+</ol>
+<p>由于计算语句存在左右两个变量，对于满足交换律的加法和乘法，对左右变量顺序进行调整，使得<code>a + b</code>和<code>b + a</code>可被识别为公共表达式；对于<code>icmp</code>逻辑计算语句，也可以通过类似的方法，将<code>b &gt; a</code>转化为<code>a &lt; b</code>。</p>
+<p>对于可处理的<code>call</code>语句，需要额外判断所调用的函数是否有潜在副作用。</p>
+<p><code>java
+   private static String getHash(Instruction instruction) {
+       if (instruction instanceof BinaryInst binaryInst) {
+           String lName = binaryInst.getOperand1().getName();
+           String rName = binaryInst.getOperand2().getName();
+           String op = binaryInst.getOpType().toString();
+           if (!OperatorType.isLogicalOperator(binaryInst.getOpType())) {
+               if (binaryInst.getOpType() == OperatorType.ADD
+                       || binaryInst.getOpType() == OperatorType.MUL) {
+                   if (lName.compareTo(rName) &gt; 0) {
+                       return rName + " " + op + " " + lName;
+                   } else {
+                       return lName + " " + op + " " + rName;
+                   }
+               }
+           } else {
+               OperatorType temp = binaryInst.getOpType();
+               if (lName.compareTo(rName) &lt; 0) {
+                   lName = binaryInst.getOperand2().getName();
+                   rName = binaryInst.getOperand1().getName();
+                   temp = switch (temp) {
+                       case ICMP_SGE -&gt; OperatorType.ICMP_SLE;
+                       case ICMP_SGT -&gt; OperatorType.ICMP_SLT;
+                       case ICMP_SLT -&gt; OperatorType.ICMP_SGT;
+                       case ICMP_SLE -&gt; OperatorType.ICMP_SGE;
+                       default -&gt; temp;
+                   };
+               }
+               return lName + " " + temp.toString() + " " + rName;
+           }
+       } else if (instruction instanceof GepInst gepInst) {
+           return gepInst.getPointer().getName() + " "
+                   + gepInst.getIndex().getName();
+       } else if (instruction instanceof CallInst callInst &amp;&amp; callCanReplaced(callInst)) {
+           return callInst.getCallee();
+       } else if (instruction instanceof TruncInst truncInst) {
+           return truncInst.getOriginValue().getName() + " trunc "
+                   + truncInst.getOriginValue().getValueType() + " -&gt; " + truncInst.getValueType();
+       } else if (instruction instanceof ZextInst zextInst) {
+           return zextInst.getOriginValue().getName() + " zext "
+                   + zextInst.getOriginValue().getValueType() + " -&gt; " + zextInst.getValueType();
+       }
+       return null;
+   }</code></p>
+<ol>
+<li>如果哈希值已存在，说明当前指令是冗余的，可以用已有的值替换，并移除该指令。</li>
+</ol>
+<p>当前基本块处理完成后，递归处理支配树中的子基本块，确保全局范围内的等价指令都能被识别。在退出当前基本块后，移除在该基本块中插入的哈希值，避免影响其他独立的控制流路径。</p>
+<p>```java
+   private static void visitBlock(BasicBlock block) {
+       ArrayList<Instruction> instructions = new ArrayList&lt;&gt;(block.getInstructions());
+       HashSet<String> inserted = new HashSet&lt;&gt;();</p>
+<pre><code>   instructions.forEach(instr -&gt; {
+       String gvnHash = getHash(instr);
+       if (gvnHash != null) {
+           if (gvnMap.containsKey(gvnHash)) {
+               instr.replaceByNewValue(gvnMap.get(gvnHash));
+               block.getInstructions().remove(instr);
+               instr.removeOperands();
+           } else {
+               gvnMap.put(gvnHash, instr);
+               inserted.add(gvnHash);
+           }
+       }
+   });
+
+   block.getImmediateDominateBlocks().forEach(GVN::visitBlock);
+   inserted.forEach(gvnMap::remove);
+</code></pre>
+<p>}
+   ```</p>
+<h3 id="_10">常量折叠</h3>
+<p>常量折叠可进行的优化较多。</p>
+<ol>
+<li>对于截断与扩展指令，如果操作数是常量，则可以直接将值替换为对应位数的值。</li>
+</ol>
+<p>```java
+   private static void zextOptimize(ZextInst zextInst) {
+       Value origin = zextInst.getOriginValue();
+       if (origin instanceof ConstInt constInt) {
+           int value = constInt.getIntValue();
+           ValueType targetType = zextInst.getValueType();
+           if (targetType.equals(IntegerType.i8) || targetType.equals(IntegerType.i32)) {
+               ConstInt constInt1 = new ConstInt(targetType, value);
+               zextInst.replaceByNewValue(constInt1);
+               zextInst.removeOperands();
+               curBlock.getInstructions().remove(zextInst);
+           }
+       }
+   }</p>
+<p>private static void truncOptimize(TruncInst truncInst) {
+       Value origin = truncInst.getOriginValue();
+       if (origin instanceof ConstInt constInt) {
+           int value = constInt.getIntValue();
+           ValueType targetType = truncInst.getValueType();
+           if (targetType.equals(IntegerType.i8) &amp;&amp; constInt.getValueType().equals(IntegerType.i32)) {
+               ConstInt constInt1 = new ConstInt(targetType, value &amp; 0xFF);
+               truncInst.replaceByNewValue(constInt1);
+               truncInst.removeOperands();
+               curBlock.getInstructions().remove(truncInst);
+           }
+       }
+   }
+   ```</p>
+<ol>
+<li><code>a % b = a - a / b * b（b为常数）</code>，方便后端进行乘除优化</li>
+</ol>
+<p><code>java
+   private static void srem2div(BinaryInst inst) {
+       Value a = inst.getOperand1();
+       Value b = inst.getOperand2();
+       BasicBlock curBlock = inst.getBasicBlock();
+       if (!(a instanceof ConstInt) &amp;&amp; (b instanceof ConstInt)) {
+           BinaryInst div = new BinaryInst(OperatorType.SDIV, a, b);
+           BinaryInst mul = new BinaryInst(OperatorType.MUL, div, b);
+           BinaryInst sub = new BinaryInst(OperatorType.SUB, a, mul);
+           div.setBasicBlock(curBlock);
+           mul.setBasicBlock(curBlock);
+           sub.setBasicBlock(curBlock);
+           curBlock.getInstructions().set(curBlock.getInstructions().indexOf(inst), div);
+           curBlock.getInstructions().add(curBlock.getInstructions().indexOf(div) + 1, mul);
+           curBlock.getInstructions().add(curBlock.getInstructions().indexOf(mul) + 1, sub);
+           inst.replaceByNewValue(sub);
+           curBlock.getInstructions().remove(inst);
+           inst.removeOperands();
+       }
+   }</code></p>
+<ol>
+<li>
+<p>对计算语句<code>BinaryInst</code>，分别讨论两个操作数中常数的数量，进行对应的优化</p>
+</li>
+<li>
+<p>两个操作数均为常数，则可以立即计算结果并代替原指令</p>
+</li>
+<li>其中一个操作数为常数<ul>
+<li>a + 0 = 0 + a = a</li>
+<li>a - 0 = a</li>
+<li>a * 0 = 0 * a = 0</li>
+<li>a * 1 = 1 * a = a</li>
+<li>0 / a = 0</li>
+<li>a / 1 = 1</li>
+<li>o % a = 0</li>
+<li>a % 1 = a % (-1) = 0</li>
+</ul>
+</li>
+<li>
+<p>两个操作数均非常数</p>
+<ul>
+<li>(a - b) + b = b + (a - b) = a</li>
+<li>(a + b) + (a - b) = 2a</li>
+<li>a - a = 0</li>
+<li>(a + b) - b = a, (a + b) - a = b</li>
+<li>a - (a - b) = b</li>
+<li>a / a = 1</li>
+<li>a % a = 0</li>
+</ul>
+</li>
+<li>
+<p>完成后对phi节点进行优化：</p>
+</li>
+<li>
+<p>清理Phi指令中来自已删除基本块的操作数和对应的基本块；</p>
+</li>
+<li>如果Phi指令的所有操作数相同，或者Phi指令没有用户，则将Phi指令替换为其中一个操作数，简化Phi指令；</li>
+<li>移除Phi指令中来自已删除基本块的操作数和对应的基本块</li>
+</ol>
+<h3 id="_11">跳转优化</h3>
+<p>与常量折叠类似，对于一些<code>icmp</code>指令，也可提前计算出结果，如<code>%cmp1 = icmp eq i32 5, 5</code>可被替换为<code>%cmp1 = 1</code>。</p>
+<pre><code class="language-java">private static void icmpOptimize(BinaryInst binaryInst) {
+    Value value1 = binaryInst.getOperand1();
+    Value value2 = binaryInst.getOperand2();
+    if (value1 instanceof ConstInt constInt1 &amp;&amp; value2 instanceof ConstInt constInt2) {
+        OperatorType op = binaryInst.getOpType();
+        int cons1 = constInt1.getIntValue();
+        int cons2 = constInt2.getIntValue();
+        int value = switch (op) {
+            case ICMP_EQ -&gt; cons1 == cons2 ? 1 : 0;
+            case ICMP_NE -&gt; cons1 != cons2 ? 1 : 0;
+            case ICMP_SGE -&gt; cons1 &gt;= cons2 ? 1 : 0;
+            case ICMP_SGT -&gt; cons1 &gt; cons2 ? 1 : 0;
+            case ICMP_SLE -&gt; cons1 &lt;= cons2 ? 1 : 0;
+            case ICMP_SLT -&gt; cons1 &lt; cons2 ? 1 : 0;
+            default -&gt; 0;
+        };
+        ConstInt constInt = new ConstInt(IntegerType.i1, value);
+        BasicBlock curBlock = binaryInst.getBasicBlock();
+        curBlock.getInstructions().remove(binaryInst);
+        binaryInst.replaceByNewValue(constInt);
+        binaryInst.removeOperands();
+    }
+}
+</code></pre>
+<p>此时一些<code>br</code>的跳转方向已经确定，此时可以通过将有条件br改写成无条件br，例如<code>br i1 1, label %true, label %false</code>可被替换为<code>br label %true</code>。</p>
+<p>跳转优化不仅能减少代码体积，同时通过删除无用代码与修改CFG，暴露潜在的优化机会。</p>
+<pre><code class="language-java">private static void brOptimize(BrInst brInst) {
+    Value value = brInst.getCondition();
+    BasicBlock curBlock = brInst.getBasicBlock();
+    if (value instanceof ConstInt constInt) {
+        BrInst noCondBr;
+        BasicBlock targetBlock;
+        if (constInt.getIntValue() == 0) {
+            targetBlock = brInst.getFalseBlock();
+            curBlock.deleteForPhi(brInst.getTrueBlock());
+        } else {
+            targetBlock = brInst.getTrueBlock();
+            curBlock.deleteForPhi(brInst.getFalseBlock());
+        }
+        noCondBr = new BrInst(targetBlock);
+        curBlock.getInstructions().set(curBlock.getInstructions().indexOf(brInst), noCondBr);
+        brInst.removeOperands();
+    }
+}
+</code></pre>
+<p>最后同样对phi指令进行处理，同时删除掉不可达的基本块。</p>
+<h3 id="_12">全局变量访存优化</h3>
+<p>对于全局变量可通过跟踪load和store进行优化。</p>
+<ul>
+<li>store指令：</li>
+<li>跟踪对全局变量的存储操作，记录最新的存储值。</li>
+<li>
+<p>如果全局变量的存储值已经被记录且没有被修改，可以移除冗余的store指令。</p>
+</li>
+<li>
+<p>load指令：</p>
+</li>
+<li>
+<p>如果加载操作指向的全局变量已经有最新的存储值，可以将load指令替换为存储的常量值，消除不必要的内存读取。</p>
+</li>
+<li>
+<p>处理函数调用：</p>
+</li>
+<li>函数调用可能会修改全局变量的状态，因此在遇到call指令时，需要清除当前的存储映射，确保后续优化的正确性。</li>
+<li>在函数调用之前，重新插入所有记录的store指令，以维护全局变量的状态一致性。</li>
+</ul>
+<pre><code class="language-java">private static void optimizeGlobalVar(BasicBlock basicBlock) {
+    HashMap&lt;GlobalVar, Value&gt; gvMap = new HashMap&lt;&gt;();
+    HashMap&lt;GlobalVar, Value&gt; writeMap = new HashMap&lt;&gt;();
+    ArrayList&lt;Instruction&gt; instructions = new ArrayList&lt;&gt;(basicBlock.getInstructions());
+    // 如果是全局数组，那么getPointer得到的应该是gepInst
+    // 因此以下的操作针对的是全局变量，而非全局数组
+    for (Instruction instruction : instructions) {
+        if (instruction instanceof StoreInst storeInst) {
+            if (!(storeInst.getPointer() instanceof GlobalVar globalVar)) {
+                continue;
+            }
+            gvMap.put(globalVar, storeInst.getStoredValue());
+            writeMap.put(globalVar, storeInst.getStoredValue());
+            storeInst.removeOperands();
+            basicBlock.getInstructions().remove(instruction);
+        } else if (instruction instanceof LoadInst loadInst) {
+            if (!(loadInst.getPointer() instanceof GlobalVar globalVar)) {
+                continue;
+            }
+            if (gvMap.containsKey(globalVar)) {
+                loadInst.replaceByNewValue(gvMap.get(globalVar));
+                loadInst.removeOperands();
+                basicBlock.getInstructions().remove(instruction);
+            } else {
+                gvMap.put(globalVar, loadInst);
+            }
+        } else if (instruction instanceof CallInst callInst) {
+            gvMap.clear();
+            for (Map.Entry&lt;GlobalVar, Value&gt; entry : writeMap.entrySet()) {
+                StoreInst storeInst = new StoreInst(entry.getKey(), entry.getValue());
+                storeInst.setBasicBlock(basicBlock);
+                basicBlock.getInstructions().add(basicBlock.getInstructions().indexOf(callInst), storeInst);
+            }
+            writeMap.clear();
+        }
+    }
+    for (Map.Entry&lt;GlobalVar, Value&gt; entry : writeMap.entrySet()) {
+        StoreInst storeInst = new StoreInst(entry.getKey(), entry.getValue());
+        storeInst.setBasicBlock(basicBlock);
+        basicBlock.getInstructions().add(basicBlock.getInstructions().size() - 1, storeInst);
+    }
+}
+</code></pre>
+<h3 id="_13">基本块合并与基本块重排</h3>
+<p>合并基本块并对基本块进行排序，可以降低跳转指令的执行次数。</p>
+<p>如果<code>block</code>有且仅有一个后继基本块<code>child</code>，并且<code>child</code>的前驱基本块数量也是1（即只有<code>block</code>一个前驱），且未被删除，则可以尝试合并。合并之后需要对涉及到的br语句与phi结点进行修改。</p>
+<pre><code class="language-java">private static boolean merge(Function function) {
+    boolean merged = false;
+    ArrayList&lt;BasicBlock&gt; blocks = new ArrayList&lt;&gt;(function.getBasicBlocks());
+
+    // 使用迭代器安全地在遍历时移除块
+    Iterator&lt;BasicBlock&gt; it = blocks.iterator();
+    while (it.hasNext()) {
+        BasicBlock block = it.next();
+        if (block.isDeleted()) {
+            continue;
+        }
+        if (block.getNextBlocks().size() == 1) {
+            BasicBlock child = block.getNextBlocks().get(0);
+            if (child.getPrevBlocks().size() == 1 &amp;&amp; !child.isDeleted()) {
+                // 合并块和子块
+                performMerge(block, child);
+                merged = true;
+            }
+        }
+    }
+
+    // 如果进行了合并，更新函数的基本块列表
+    if (merged) {
+        // 过滤掉已删除的块
+        ArrayList&lt;BasicBlock&gt; updatedBlocks = new ArrayList&lt;&gt;();
+        for (BasicBlock block : blocks) {
+            if (!block.isDeleted()) {
+                updatedBlocks.add(block);
+            }
+        }
+        function.setBasicBlocks(updatedBlocks);
+    }
+
+    return merged;
+}
+
+private static void performMerge(BasicBlock parent, BasicBlock child) {
+    // 从父块中移除跳转指令
+    Instruction jumpInstr = parent.getLastInstruction();
+    jumpInstr.removeOperands();
+    parent.getInstructions().remove(jumpInstr);
+
+    // 将子块中的所有指令移动到父块
+    Iterator&lt;Instruction&gt; it = child.getInstructions().iterator();
+    while (it.hasNext()) {
+        Instruction instr = it.next();
+        if (instr instanceof PhiInst phiInst) {
+            // 更新 phi 指令以使用来自父块的操作数
+            int index = phiInst.getBlocks().indexOf(parent);
+            if (index != -1) {
+                Value newValue = phiInst.getOperands().get(index);
+                phiInst.replaceByNewValue(newValue);
+            }
+            phiInst.removeOperands();
+        } else {
+            parent.getInstructions().add(instr);
+            instr.setBasicBlock(parent);
+        }
+        it.remove();
+    }
+
+    // 将子块的引用重定向到父块，并标记子块为已删除
+    child.replaceByNewValue(parent);
+    child.setDeleted(true);
+}
+</code></pre>
+<p>对已有的基本块，可以采用dfs的方法进行排序，使得控制流路径上的基本块尽可能连续排列，提升指令缓存的命中率，提高执行效率。</p>
+<pre><code class="language-java">private static ArrayList&lt;BasicBlock&gt; reorderBasicBlocksDFS(Function function) {
+    List&lt;BasicBlock&gt; blocks = function.getBasicBlocks();
+    ArrayList&lt;BasicBlock&gt; orderedBlocks = new ArrayList&lt;&gt;();
+    Set&lt;BasicBlock&gt; visited = new HashSet&lt;&gt;();
+    Deque&lt;BasicBlock&gt; stack = new ArrayDeque&lt;&gt;();
+
+    if (!blocks.isEmpty()) {
+        stack.push(blocks.get(0));
+    }
+
+    while (!stack.isEmpty()) {
+        BasicBlock current = stack.pop();
+        if (!visited.contains(current)) {
+            visited.add(current);
+            orderedBlocks.add(current);
+            // 逆序压栈以保持顺序
+            List&lt;BasicBlock&gt; successors = getSuccessors(current);
+            Collections.reverse(successors);
+            for (BasicBlock succ : successors) {
+                if (!visited.contains(succ)) {
+                    stack.push(succ);
+                }
+            }
+        }
+    }
+
+    // 将未在DFS中访问到的块追加到末尾
+    for (BasicBlock block : blocks) {
+        if (!visited.contains(block)) {
+            orderedBlocks.add(block);
+        }
+    }
+
+    return orderedBlocks;
+}
+</code></pre>
+<h3 id="_14">输出优化</h3>
+<p>对于连续输出的常数/常字符串，可以通过连续拼接整合输出。</p>
+<pre><code class="language-java">private static void optimize(BasicBlock block) {
+    boolean changed = true;
+    while (changed) {
+        changed = false;
+        ArrayList&lt;Instruction&gt; instructions = new ArrayList&lt;&gt;(block.getInstructions());
+        for (int i = 0; i &lt; instructions.size(); i++) {
+            Instruction instruction = instructions.get(i);
+            if (!(instruction instanceof OutputInst outputInst)) {
+                continue;
+            }
+            if (!outputInst.constContent()) {
+                continue;
+            }
+            ArrayList&lt;Instruction&gt; buffer = new ArrayList&lt;&gt;();
+            buffer.add((Instruction) outputInst);
+            int j = i + 1;
+            // 连续获取输出语句
+            for (; j &lt; instructions.size(); j++) {
+                if (instructions.get(j) instanceof OutputInst temp &amp;&amp; temp.constContent()) {
+                    buffer.add((Instruction) temp);
+                } else {
+                    break;
+                }
+            }
+            if (buffer.size() &lt; 2) {
+                continue;
+            }
+            StringBuilder sb = new StringBuilder();
+            for (Instruction output : buffer) {
+                sb.append(((OutputInst) output).getConstContent());
+            }
+            String output = sb.toString();
+            output = output.replace(&quot;\\0A&quot;, &quot;\n&quot;);
+            ConstString constString = new ConstString(IRData.getConstStringName(), output);
+            PutstrInst putstr = new PutstrInst(constString);
+            block.getInstructions().set(i, putstr);
+            block.getInstructions().removeAll(buffer);
+            changed = true;
+            break;
+        }
+    }
+}
+</code></pre>
+<h2 id="_15">后端优化</h2>
+<h3 id="phi">消除phi结点</h3>
+<p>按照教程的算法可以对插入的phi结点进行处理，转化为一组move语句。</p>
+<p>检测移动指令之间的依赖关系，避免因覆盖导致的错误，需要引入临时变量以安全地重新排序移动指令，确保原始值在过程中被正确保留。如果前驱块有多个后继块，创建一个新的基本块来保存移动指令，并在新块中添加跳转指令到当前块。这避免了干扰其他后继块的控制流。</p>
+<h3 id="_16">寄存器分配</h3>
+<p>寄存器分配采用启发式图着色算法。</p>
+<ol>
+<li>
+<p>计算<code>def</code>和<code>use</code>集合，通过$in[B] = use[B] \cup (out[B] - def[B])，  out[B] = \cup_{B的后继块P}in[P]$计算<code>in</code>和<code>out</code>集合</p>
+</li>
+<li>
+<p>构建干涉图，遍历每个基本块，初始化活跃变量集合为该块的OUT集合。</p>
+</li>
+</ol>
+<p>逆序遍历指令，更新活跃变量集合：</p>
+<ul>
+<li>如果指令定义了一个变量，则从活跃集合中移除该变量，并与当前活跃变量建立干涉关系。</li>
+<li>
+<p>将指令的操作数添加到活跃变量集合。</p>
+</li>
+<li>
+<p>按照教程的算法实现着色和溢出。</p>
+</li>
+</ul>
+<p>在目标代码生成截断已经为变量在栈上预留了空间，对于溢出的变量，将值存在栈上对应位置即可。</p>
+<h3 id="_17">计算强度削弱</h3>
+<p>采用教程提到的方法对乘除等计算进行额外处理，从而降低周期数。</p>
+<p>对于<code>变量 * 常数</code>类型的乘法运算，可以根据常数的值分类讨论：</p>
+<ul>
+<li>常数是0、1、-1，比较简单</li>
+<li>常数是负数，将其转化为正数，最后使用取反</li>
+<li>常数（绝对值）大小在2-9之间，通过已经构造好的方法进行翻译</li>
+<li>常数（绝对值）的二进制表示中1的个数不多于2，可以通过移位的组合来实现</li>
+<li>除此之外的情况直接使用乘法指令</li>
+</ul>
+<pre><code class="language-java">private void makeVarMulConst(Register varReg, int constInt, Register targetReg) {
+    if (constInt == 0) {
+        new LiAsm(targetReg, 0);
+        return;
+    }
+    if (constInt == 1) {
+        new MoveAsm(targetReg, varReg);
+        return;
+    }
+    if (constInt == -1) {
+        new CalcAsm(targetReg, AsmOp.SUBU, Register.ZERO, varReg);
+        return;
+    }
+    boolean isNegative = constInt &lt; 0;
+    int absConstInt = Math.abs(constInt);
+    switch (absConstInt) {
+        case 2:
+            new CalcAsm(targetReg, AsmOp.ADDU, varReg, varReg);
+            break;
+        case 3:
+            new CalcAsm(Register.V0, AsmOp.ADDU, varReg, varReg);
+            new CalcAsm(targetReg, AsmOp.ADDU, Register.V0, varReg);
+            break;
+        case 4:
+            new CalcAsm(targetReg, AsmOp.SLL, varReg, 2);
+            break;
+        case 5:
+            new CalcAsm(Register.V0, AsmOp.SLL, varReg, 2);
+            new CalcAsm(targetReg, AsmOp.ADDU, Register.V0, varReg);
+            break;
+        case 6:
+            new CalcAsm(Register.V0, AsmOp.SLL, varReg, 2);
+            new CalcAsm(Register.V1, AsmOp.ADDU, varReg, varReg);
+            new CalcAsm(targetReg, AsmOp.ADDU, Register.V0, Register.V1);
+            break;
+        case 7:
+            new CalcAsm(Register.V0, AsmOp.SLL, varReg, 3);
+            new CalcAsm(targetReg, AsmOp.SUBU, Register.V0, varReg);
+            break;
+        case 8:
+            new CalcAsm(targetReg, AsmOp.SLL, varReg, 3);
+            break;
+        case 9:
+            new CalcAsm(Register.V0, AsmOp.SLL, varReg, 3);
+            new CalcAsm(targetReg, AsmOp.ADDU, Register.V0, varReg);
+            break;
+        default:
+            int bitCnt = Integer.bitCount(absConstInt);
+            if (bitCnt &lt;= 2) {
+                // 使用原有的移位和加法逻辑
+                int[] shifts = new int[2];
+                int index = 0;
+                for (int i = 0; i &lt; 32; i++) {
+                    if ((absConstInt &amp; (1 &lt;&lt; i)) != 0) {
+                        shifts[index++] = i;
+                        if (index == 2) break;
+                    }
+                }
+
+                if (bitCnt == 1) {
+                    new CalcAsm(targetReg, AsmOp.SLL, varReg, shifts[0]);
+                } else {
+                    new CalcAsm(Register.V0, AsmOp.SLL, varReg, shifts[0]);
+                    new CalcAsm(Register.V1, AsmOp.SLL, varReg, shifts[1]);
+                    new CalcAsm(targetReg, AsmOp.ADDU, Register.V0, Register.V1);
+                }
+            } else {
+                // 对于其他情况，使用乘法
+                new LiAsm(Register.V0, absConstInt);
+                new CalcAsm(targetReg, AsmOp.MUL, varReg, Register.V0);
+            }
+    }
+    if (isNegative) {
+        new CalcAsm(targetReg, AsmOp.SUBU, Register.ZERO, targetReg);
+    }
+}
+</code></pre>
+<p>对于除法，可以参考论文中的实现：</p>
+<p><img alt="图片#100% #auto" src="https://drinkwater-1325041233.cos.ap-guangzhou.myqcloud.com/imgs/cguserImages" /></p>
+<p>代码实现如下：</p>
+<pre><code class="language-java">public class OptimizedDivision {
+    private static long calculateMagicNumber(int divisor) {
+        long nc = ((1L &lt;&lt; 31) - ((1L &lt;&lt; 31) % divisor) - 1) / divisor;
+        long t = 32;
+        while ((1L &lt;&lt; t) &lt;= nc * (divisor - (1L &lt;&lt; t) % divisor)) {
+            t++;
+        }
+        return ((1L &lt;&lt; t) + divisor - (1L &lt;&lt; t) % divisor) / divisor;
+    }
+
+    public static void makeVarDivConst(Register varReg, int constInt, Register targetReg) {
+        int abs = Math.abs(constInt);
+        if (abs == 1) {
+            if (constInt &lt; 0) {
+                new CalcAsm(targetReg, AsmOp.SUBU, Register.ZERO, varReg);
+            } else {
+                new MoveAsm(targetReg, varReg);
+            }
+            return;
+        }
+
+        if ((abs &amp; (abs - 1)) == 0) {
+            // Power of 2 case
+            int shift = 31 - Integer.numberOfLeadingZeros(abs);
+            Register dividend = getDividend(varReg, abs);
+            new CalcAsm(targetReg, AsmOp.SRA, dividend, shift);
+        } else if (abs &lt; 32) {
+            // Use pre-calculated magic numbers for small divisors
+            long m = calculateMagicNumber(abs);
+            int n = (int) ((m &lt;&lt; 32) &gt;&gt;&gt; 32);
+            int shift = (int) (m &gt;&gt;&gt; 32);
+            new LiAsm(Register.V0, n);
+            new MulDivAsm(varReg, AsmOp.MULT, Register.V0);
+            new MDRegAsm(AsmOp.MFHI, Register.V1);
+            new CalcAsm(Register.V0, AsmOp.SRA, Register.V1, shift);
+            new CalcAsm(Register.A0, AsmOp.SRL, varReg, 31);
+            new CalcAsm(targetReg, AsmOp.ADDU, Register.V0, Register.A0);
+        } else {
+            // Original logic for larger divisors
+            long t = 32;
+            long nc = ((long) 1 &lt;&lt; 31) - (((long) 1 &lt;&lt; 31) % abs) - 1;
+            while (((long) 1 &lt;&lt; t) &lt;= nc * (abs - ((long) 1 &lt;&lt; t) % abs)) {
+                t++;
+            }
+            long m = ((((long) 1 &lt;&lt; t) + (long) abs - ((long) 1 &lt;&lt; t) % abs) / (long) abs);
+            int n = (int) ((m &lt;&lt; 32) &gt;&gt;&gt; 32);
+            int shift = (int) (t - 32);
+            new LiAsm(Register.V0, n);
+            if (m &gt;= 0x80000000L) {
+                new MDRegAsm(AsmOp.MTHI, varReg);
+                new MulDivAsm(varReg, AsmOp.MADD, Register.V0);
+            } else {
+                new MulDivAsm(varReg, AsmOp.MULT, Register.V0);
+            }
+            new MDRegAsm(AsmOp.MFHI, Register.V1);
+            new CalcAsm(Register.V0, AsmOp.SRA, Register.V1, shift);
+            new CalcAsm(Register.A0, AsmOp.SRL, varReg, 31);
+            new CalcAsm(targetReg, AsmOp.ADDU, Register.V0, Register.A0);
+        }
+        if (constInt &lt; 0) {
+            new CalcAsm(targetReg, AsmOp.SUBU, Register.ZERO, targetReg);
+        }
+    }
+
+    private static Register getDividend(Register oldDividend, int abs) {
+        int l = 31 - Integer.numberOfLeadingZeros(abs);
+        new CalcAsm(Register.V0, AsmOp.SRA, oldDividend, 31);
+        if (l &gt; 0) {
+            new CalcAsm(Register.V0, AsmOp.SRL, Register.V0, 32 - l);
+        }
+        new CalcAsm(Register.V1, AsmOp.ADDU, oldDividend, Register.V0);
+        return Register.V1;
+    }
+}
+</code></pre>
+<h3 id="_18">窥孔优化</h3>
+<p>针对一小段mips代码也可进行优化，亦能取得不错的效果。</p>
+<p><code>PlatoCompiler</code>设计的窥孔优化种类如下：</p>
+<ul>
+<li>相邻的jump和label</li>
+</ul>
+<p><code>assembly
+  j label1 # 可删去
+  label1:</code></p>
+<ul>
+<li>
+<p>加法转换：<code>addiu $t1, $t2, 0</code>可变为<code>move $t1, $t2</code></p>
+</li>
+<li>
+<p>删除多余的move</p>
+</li>
+</ul>
+<p>```assembly
+  move $t1, $t1 # 可删去</p>
+<p>move $t1, $t2 # 可删去
+  move $t1, $t3 </p>
+<p>move $t1, $t2
+  move $t2, $t1 # 可删去
+  ```</p>
+<ul>
+<li>访存优化</li>
+</ul>
+<p>```assembly
+  sw $t1, 0($t0)
+  lw $t2, 0($t0)</p>
+<p>move $t2, $t1 # 与以上代码等价
+  ```</p>
+<ul>
+<li>条件跳转优化</li>
+</ul>
+<p>```assembly
+  beq $t4, $zero, label1
+  j label2
+  label1:</p>
+<p># 可转化为
+  bne $t4, $zero, label2
+  label1:
+  ```</p>
+<ul>
+<li>加强无条件跳转优化：经过以上优化之后可能有空块，此时删去无条件跳转指令，pc也能自然移动到目标标签</li>
+</ul>
+<p>```assembly
+  j main_b7 # 可删去</p>
+<p>main_b4:
+  # move %37 -&gt; %3
+  # br label %7</p>
+<p>main_b7:
+  ```</p>
+<ul>
+<li>立即数优化：可能用于连续输出</li>
+</ul>
+<p><code>assembly
+  li $t1, 5 # 可删去
+  li $t1, 10
+  move $t2, $t1</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
